@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tesla Api</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3.17.5/swagger-ui.css">
+</head>
+<body>
+<div id="swagger-ui"></div>
+<script src="https://unpkg.com/swagger-ui-dist@3.17.5/swagger-ui-standalone-preset.js"></script>
+<script src="https://unpkg.com/swagger-ui-dist@3.17.5/swagger-ui-bundle.js"></script>
+<script>
+    window.onload = function() {
+        var apis = [
+            {
+                url: 'api1.yaml',
+                name: 'API1-name'
+            },
+            {
+                url: 'api2.yaml',
+                name: 'API2-name'
+            }
+        ];
+        const ui = SwaggerUIBundle({
+            urls: apis,
+            dom_id: '#swagger-ui',
+            validatorUrl: null,
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+            ],
+            plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: "StandaloneLayout",
+        })
+        window.ui = ui
+    }
+</script>
+</body>
+</html>

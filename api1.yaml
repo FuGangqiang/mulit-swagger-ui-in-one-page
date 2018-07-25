@@ -1,0 +1,15 @@
+openapi: 3.0.0
+info:
+  title: API1
+  description: API1 doc
+  version: 1.0
+servers:
+  - url: 'https://example.com'
+    description: API1 server
+paths:
+  /api/v1/test:
+    get:
+      tags:
+        - api1
+      summary: test
+  
